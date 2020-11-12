@@ -17,9 +17,16 @@
  * automatically.
  */
 
-var path = require('path');
+const fs = require("fs");
+
+const content = fs.readFileSync("assets/index.html");
+
+var path = require("path");
 
 module.exports = function notFound(data, options) {
+  // redirect to index
+  return this.res.send(content.toString());
+
   // Get access to `req`, `res`, & `sails`
   var req = this.req;
   var res = this.res;
@@ -38,7 +45,7 @@ module.exports = function notFound(data, options) {
   // is not set to 'production'.  In production, we shouldn't
   // send back any identifying information about errors.
   if (
-    sails.config.environment === 'production' &&
+    sails.config.environment === "production" &&
     sails.config.keepResponseErrors !== true
   ) {
     data = undefined;
@@ -52,13 +59,13 @@ module.exports = function notFound(data, options) {
 
   // If second argument is a string, we take that to mean it refers to a view.
   // If it was omitted, use an empty object (`{}`)
-  options = typeof options === 'string' ? { view: options } : options || {};
+  options = typeof options === "string" ? { view: options } : options || {};
 
   // Attempt to prettify data for views, if it's a non-error object
   var viewData = data;
-  if (!(viewData instanceof Error) && 'object' == typeof viewData) {
+  if (!(viewData instanceof Error) && "object" == typeof viewData) {
     try {
-      viewData = require('util').inspect(data, { depth: null });
+      viewData = require("util").inspect(data, { depth: null });
     } catch (e) {
       viewData = undefined;
     }
@@ -68,11 +75,12 @@ module.exports = function notFound(data, options) {
   // Otherwise try to guess an appropriate view, or if that doesn't
   // work, just send JSON.
   if (options.view) {
-    return res.view(options.view, { data: viewData, title: 'Not Found' });
-  } else
-    // If no second argument provided, try to serve the default view,
-    // but fall back to sending JSON(P) if any errors occur.
-    return res.view('404', { data: viewData, title: 'Not Found' }, function(
+    return res.view(options.view, { data: viewData, title: "Not Found" });
+  }
+  // If no second argument provided, try to serve the default view,
+  // but fall back to sending JSON(P) if any errors occur.
+  else
+    return res.view("404", { data: viewData, title: "Not Found" }, function (
       err,
       html
     ) {
@@ -81,15 +89,15 @@ module.exports = function notFound(data, options) {
         //
         // Additionally:
         // • If the view was missing, ignore the error but provide a verbose log.
-        if (err.code === 'E_VIEW_FAILED') {
+        if (err.code === "E_VIEW_FAILED") {
           sails.log.verbose(
-            'res.notFound() :: Could not locate view for error page (sending JSON instead).  Details: ',
+            "res.notFound() :: Could not locate view for error page (sending JSON instead).  Details: ",
             err
           );
         } else {
           // Otherwise, if this was a more serious error, log to the console with the details.
           sails.log.warn(
-            'res.notFound() :: When attempting to render error page view, an error occured (sending JSON instead).  Details: ',
+            "res.notFound() :: When attempting to render error page view, an error occured (sending JSON instead).  Details: ",
             err
           );
         }
