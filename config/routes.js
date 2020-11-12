@@ -29,10 +29,6 @@ module.exports.routes = {
   "POST /checklist": "ChecklistController.create",
   "PUT /checklist/:id": "ChecklistController.update",
   "GET /checklist/:id": "ChecklistController.findOne",
-  "*": {
-    target: "/",
-    skipAssets: false,
-  },
 
   /***************************************************************************
    *                                                                          *
