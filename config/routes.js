@@ -21,14 +21,18 @@
  */
 
 module.exports.routes = {
-  'POST /signup': 'UserController.create',
-  'POST /login': 'AuthController.login',
-  'PUT /user/:id/addchecklist': 'UserController.updateVisitedChecklists',
-  'GET /user/:id/checklist': 'UserController.getUsersChecklists',
+  "POST /signup": "UserController.create",
+  "POST /login": "AuthController.login",
+  "PUT /user/:id/addchecklist": "UserController.updateVisitedChecklists",
+  "GET /user/:id/checklist": "UserController.getUsersChecklists",
 
-  'POST /checklist': 'ChecklistController.create',
-  'PUT /checklist/:id': 'ChecklistController.update',
-  'GET /checklist/:id': 'ChecklistController.findOne'
+  "POST /checklist": "ChecklistController.create",
+  "PUT /checklist/:id": "ChecklistController.update",
+  "GET /checklist/:id": "ChecklistController.findOne",
+  "*": {
+    target: "/",
+    skipAssets: true,
+  },
 
   /***************************************************************************
    *                                                                          *
