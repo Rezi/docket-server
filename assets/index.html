@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Docket</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta property="og:title" content="cHECK" />
+  <meta property=”og:type” content=”website” />
+  <meta property="og:description" content="Checklist app with preset templates for Software development. To be sure your project is just correct."
+  />
+  <meta property="og:url" content="http://docket.work" />
+  <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
+  <meta name="twitter:card" content="app">
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:description" content="Checklist app with preset templates for Software development. To be sure your project is just correct.">
+  <meta name="twitter:app:name:iphone" content="cHECK">
+  <meta name="twitter:app:id:iphone" content="">
+  <meta name="twitter:app:name:ipad" content="cHECK">
+  <meta name="twitter:app:id:ipad" content="">
+  <meta name="twitter:app:name:googleplay" content="cHECK">
+  <meta name="twitter:app:id:googleplay" content="">
+
+  <meta name="author" content="Rezi">
+  <meta name="robots" content="index, nofollow">
+  <meta name="description" content="Checklist app with preset templates for Software development. To be sure your project is just correct.">
+
+  <link rel="canonical" href="http://www.docket.work" />
+  <style id="temp-styles">
+    /*! CSS Used from: Embedded */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -ms-overflow-style: scrollbar;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    footer,
+    header {
+      display: block;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.5;
+      color: #212529;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent;
+      -webkit-text-decoration-skip: objects;
+    }
+
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    svg:not(:root) {
+      overflow: hidden;
+    }
+
+    a,
+    button {
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+    }
+
+    button:focus {
+      outline: 1px dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+    }
+
+    button {
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    button {
+      overflow: visible;
+    }
+
+    button {
+      text-transform: none;
+    }
+
+    button {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner {
+      padding: 0;
+      border-style: none;
+    }
+
+    /*! CSS Used from: Embedded */
+
+    html {
+      box-sizing: border-box;
+      -ms-overflow-style: scrollbar;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    /*! CSS Used from: Embedded */
+
+    html,
+    body {
+      color: #666;
+      height: 100%;
+      font-family: Arial;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .icon {
+      fill: #aaa;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-size: 0.75rem;
+    }
+
+    @media screen and (min-width: 21rem) {
+      html,
+      body {
+        font-size: calc( 0.75rem + 0.25 * ((100vw - 21rem) / 41));
+      }
+    }
+
+    @media screen and (min-width: 62rem) {
+      html,
+      body {
+        font-size: 1rem;
+      }
+    }
+
+    /*! CSS Used from: Embedded */
+
+    .app-page-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+
+    .app-page {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .main-content-wrap {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      z-index: 2;
+      width: 100%;
+      padding-bottom: 4rem;
+    }
+
+    /*! CSS Used from: Embedded */
+
+    .status-bar-container {
+      overflow: hidden;
+      position: fixed;
+      right: 15px;
+      transition: max-height 0.5s;
+      z-index: 10;
+      top: 25px;
+    }
+
+    /*! CSS Used from: Embedded */
+
+    header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      position: relative;
+      background-color: #eee;
+      padding-bottom: 2rem;
+      overflow: hidden;
+      font-size: 0;
+    }
+
+    header:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 200%;
+      height: 0;
+      border: solid transparent;
+      border-width: 0 100vw 2rem;
+      border-bottom-color: #fff;
+      z-index: 1;
+    }
+
+    .nav-item {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      z-index: 1;
+    }
+
+    .nav-item .nav-inner {
+      padding: 0.3rem 2rem 0.3rem 1.5rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-size: 1.1rem;
+      color: #073453;
+    }
+
+    .nav-item .nav-inner a {
+      color: #073453;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .nav-item .nav-inner .icon {
+      margin-right: 1rem;
+      fill: #073453;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .nav-item:after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      padding: 100%;
+      position: absolute;
+      border-radius: 50%;
+      left: -100%;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .user:after {
+      background-color: #ddd;
+    }
+
+    .help:after {
+      background-color: #e6e6e6;
+    }
+
+    .logo {
+      padding: 0 2rem 0 1rem;
+      position: relative;
+      top: 0.75rem;
+      z-index: 2;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .logo .icon-docket {
+      width: 10rem;
+      height: 2.8rem;
+      fill: #ed1848;
+    }
+
+    @media screen and (max-width: 36rem) {
+      header:before {
+        content: '';
+        display: block;
+        background: #fff;
+        box-shadow: 0 0 50px 30px #fff;
+        margin: 30px 0 0;
+        width: 100%;
+        height: 100vw;
+        position: absolute;
+        background-color: white;
+        z-index: 2;
+        top: 5rem;
+      }
+    }
+
+    @media screen and (max-width: 36rem) {
+      header {
+        overflow: visible;
+        background-color: transparent;
+      }
+      header .nav-item .nav-inner {
+        padding: 1rem 2rem 0.3rem 1.5rem;
+      }
+      header:after {
+        display: none;
+      }
+      .user:after {
+        background-color: #e6e6e6;
+      }
+      .help:after {
+        background-color: #eee;
+      }
+    }
+
+    /*! CSS Used from: Embedded */
+
+    footer {
+      background-color: #073453;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 1rem 0.3rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    footer .footer-text {
+      position: relative;
+      top: -0.3rem;
+    }
+
+    footer:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      width: 200%;
+      height: 0;
+      border: solid transparent;
+      border-width: 0 100vw 2rem;
+      border-bottom-color: #073453;
+      z-index: 1;
+    }
+
+    @media screen and (max-width: 36rem) {
+      footer .footer-text {
+        top: -0.1rem;
+      }
+    }
+
+    /*! CSS Used from: Embedded */
+
+    .button {
+      padding: 0.5rem 0.6rem;
+      cursor: pointer;
+      border: 0;
+      position: relative;
+      text-decoration: none!important;
+      background-color: #ed1848;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    app-home {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      z-index: 1;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 62rem;
+    }
+
+    .create-checklist-wrap {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .introduction {
+      margin: 0 auto;
+      padding-top: 2rem;
+      max-width: 25rem;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .add-checklist-button {
+      margin: 2rem;
+    }
+
+    .info-block {
+      margin: 0 auto;
+      max-width: 22rem;
+      text-align: center;
+    }
+
+    .checklist-history-wrap {
+      padding-top: 2rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .checklist-history-title {
+      text-align: center;
+    }
+
+    .checklist-history {
+      margin: 0;
+      padding: 2rem 0 0;
+      list-style: none;
+    }
+
+    .history-item {
+      text-align: left;
+      font-size: 16px;
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+
+  <script>
+    // in case we are not on homepage hide the page befor init (the style is reove from app component anyway)
+    if (location.pathname !== '/') {
+      const tempStyles = document.getElementById('temp-styles');
+      tempStyles.innerText = '.app-page-wrap{display:none};'
+    }
+  </script>
+<link rel="stylesheet" href="styles.be53190ded98b83be3e6.css"></head>
+
+<body>
+  <app-root>
+
+    <div class="app-page-wrap">
+
+      <div class="app-page">
+        <app-header class="header">
+          <header>
+            <div class="nav-item help">
+              <div class="nav-item user">
+                <div class="nav-inner">
+
+                  <a routerlink="/help" ng-reflect-router-link="/help" href="/help">
+                    <svg class="icon icon-lifebuoy">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/defs.svg#icon-lifebuoy"></use>
+                    </svg>help</a>
+                </div>
+              </div>
+
+              <div class="nav-inner">
+                <a href="/login">
+                  <svg class="icon icon-key">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/defs.svg#icon-key"></use>
+                  </svg>login</a>
+              </div>
+            </div>
+            <div class="logo">
+              <a aria-label="Back home" tabindex="1" href="/">
+                <svg class="icon icon-docket">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/defs.svg#icon-docket-logo"></use>
+                </svg>
+              </a>
+
+            </div>
+
+          </header>
+        </app-header>
+        <div class="main-content-wrap">
+          <router-outlet></router-outlet>
+          <app-home>
+            <div class="create-checklist-wrap">
+              <div class="introduction">
+                Your tool for well&nbsp;done projects
+              </div>
+              <button aria-label="Create new checklist" class="add-checklist-button button" tabindex="2">
+                Create new checklist
+              </button>
+
+              <div class="info-block">
+                To keep track of your visited checklists, log in.
+              </div>
+
+
+              <div class="checklist-history-wrap">
+                <div class="checklist-history-title">Latest checklists opened in this&nbsp;browser:</div>
+              </div>
+
+
+            </div>
+          </app-home>
+        </div>
+
+        <app-footer class="footer">
+          <footer role="contentinfo">
+            <div class="footer-text">
+              © 2017
+              <a href="https://github.com/Rezi/cHECK" target="_blank">Rezi</a> in CN Group CZ s.r.o.
+            </div>
+
+          </footer>
+        </app-footer>
+      </div>
+    </div>
+  </app-root>
+<script src="runtime-es2015.cdfb0ddb511f65fdc0a0.js" type="module"></script><script src="runtime-es5.cdfb0ddb511f65fdc0a0.js" nomodule defer></script><script src="polyfills-es5.41678b735269c01c526e.js" nomodule defer></script><script src="polyfills-es2015.f6ede358e75241a2de9e.js" type="module"></script><script src="scripts.68274b3b3a29ac53c967.js" defer></script><script src="main-es2015.7d63d576359cd96ccf74.js" type="module"></script><script src="main-es5.7d63d576359cd96ccf74.js" nomodule defer></script></body>
+
+</html>
