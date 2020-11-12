@@ -31,7 +31,7 @@ module.exports.routes = {
   "GET /checklist/:id": "ChecklistController.findOne",
   "*": {
     target: "/",
-    skipAssets: true,
+    skipAssets: false,
   },
 
   /***************************************************************************
